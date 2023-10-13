@@ -1,0 +1,27 @@
+[
+    {
+        "number": 1,
+        "space": 1,
+        "guests": [
+            {
+                "name": "adam",
+                "surname": "mickiewicz"
+            }
+        ]
+    },
+    {
+        "number": 2,
+        "space": 3,
+        "guests": [
+            {
+                "name": "x",
+                "surname": "d"
+            }
+        ]
+    },
+    {
+        "number": 3,
+        "space": 2,
+        "guests": []
+    }
+]
