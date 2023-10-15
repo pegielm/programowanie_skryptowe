@@ -12,12 +12,7 @@
     {
         "number": 2,
         "space": 3,
-        "guests": [
-            {
-                "name": "x",
-                "surname": "d"
-            }
-        ]
+        "guests": []
     },
     {
         "number": 3,
