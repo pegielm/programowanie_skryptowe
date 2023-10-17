@@ -2,6 +2,9 @@ import re
 import sys
 
 def grep(args):
+    if len(args) < 1:
+        print("Za mało argumentów")
+        return
     matching_lines = []
     if((args[0]=="-i" and args[1]=="-w") or (args[0]=="-w" and args[1]=="-i")): # ignoruje wielkosc liter i wyszukuje tylko cale slowa
         try:

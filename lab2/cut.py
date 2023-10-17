@@ -1,6 +1,9 @@
 import re
 import sys
 def cut(args):
+    if len(args) < 4:
+        print("Za mało argumentów")
+        return
     result = []
     if(args[0]=="-d"):
         separator = args[1]
