@@ -12,7 +12,12 @@
     {
         "number": 2,
         "space": 3,
-        "guests": []
+        "guests": [
+            {
+                "name": "jan",
+                "surname": "s\u0142owacki"
+            }
+        ]
     },
     {
         "number": 3,
