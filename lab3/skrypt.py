@@ -13,7 +13,7 @@ def run():
 
     moves = OptionsParser.parse(sys.argv[1:])
     descriptions = [moves_descriptions[move] for move in moves]
-    for x in descriptions:
+    for x in descriptions: 
         print(x)
 run()
 

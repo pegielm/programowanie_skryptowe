@@ -4,11 +4,11 @@ vector1 = Vector2d(1, 2)
 vector2 = Vector2d(3, 4)
 
 def test_get_x():
-    assert vector1.get_x() == 1
-    assert vector2.get_x() == 3
+    assert vector1.x == 1
+    assert vector2.x == 3
 def test_get_y():
-    assert vector1.get_y() == 2
-    assert vector2.get_y() == 4
+    assert vector1.y == 2
+    assert vector2.y == 4
 def test_str():
     assert str(vector1) == "(1,2)"
     assert str(vector2) == "(3,4)"
