@@ -18,7 +18,7 @@ class OptionsParser:
         return directions
 class Simulation:
     animals = []
-    def __init__(self, directions: list[MoveDirection], positions: list[Vector2d],map: RectangularMap ) -> None:
+    def __init__(self, directions: list[MoveDirection], positions: list[Vector2d],map ) -> None:
         self.__directions = directions
         self.__positions = positions
         self.__map = map
@@ -28,10 +28,8 @@ class Simulation:
         
     
     def run(self):
-        map_vizualizer = MapVisualizer(self.__map)
-        print(map_vizualizer.draw(Vector2d(0, 0), Vector2d(self.__map.width, self.__map.height)))
+        print(self.__map)
         for i in range(len(self.__directions)):
             self.__map.move(self.animals[i%len(self.animals)],self.__directions[i])
             sleep(1)
-            print(map_vizualizer.draw(Vector2d(0, 0), Vector2d(self.__map.width, self.__map.height)))
-                
+            print(self.__map)  

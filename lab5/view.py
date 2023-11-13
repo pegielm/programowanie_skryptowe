@@ -7,7 +7,7 @@ Opis: Wizualizator mapy
 """
 from typing import Final
 from model.core import Vector2d
-from model.map import RectangularMap
+#from model.map import RectangularMap
 
 
 class MapVisualizer:

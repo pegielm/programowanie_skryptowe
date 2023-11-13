@@ -104,3 +104,54 @@ def test_for_map_4_4(
     assert rectangular_map_4_4.objectAt(Vector2d(3, 0)) is animal2
     rectangular_map_4_4.move(animal2, MoveDirection.BACKWARD)
     assert rectangular_map_4_4.objectAt(Vector2d(3, 0)) is animal2
+
+from model.map import InfiniteMap
+
+        
+@pytest.fixture
+def infinite_map():
+    yield InfiniteMap()
+
+
+def test_for_infinite_map(
+    infinite_map: InfiniteMap,
+    animal1: Animal,
+    animal2: Animal,
+    animal3: Animal,
+    animal4: Animal,
+):
+    # Testing methods of the 'Animal' class
+    assert animal1.isAt(Vector2d(0, 0)) is True
+    animal1.move(MoveDirection.RIGHT, infinite_map)
+    animal1.move(MoveDirection.FORWARD, infinite_map)
+    assert animal1.isAt(Vector2d(1, 0)) is True
+    animal1.move(MoveDirection.BACKWARD, infinite_map)
+    animal1.move(MoveDirection.LEFT, infinite_map)
+    assert animal1.isAt(Vector2d(0, 0)) is True
+    animal1.move(MoveDirection.BACKWARD, infinite_map)
+    assert animal1.isAt(Vector2d(0, -1)) is True
+    animal1.move(MoveDirection.FORWARD, infinite_map)
+    assert animal1.isAt(Vector2d(0, 0)) is True
+    # Testing the correctness of the implementation of methods inherited from abstract classes: 'IWorldMap' and 'IMoveValidator'
+    assert infinite_map.canMoveTo(Vector2d(-1, -1)) is True
+    assert infinite_map.canMoveTo(Vector2d(4, 4)) is True
+    assert infinite_map.canMoveTo(Vector2d(0, 0)) is True
+    assert infinite_map.place(animal1) is True
+    assert infinite_map.canMoveTo(Vector2d(0, 0)) is False
+    assert infinite_map.isOccupied(Vector2d(0, 0)) is True
+    assert infinite_map.place(animal1) is False
+    assert infinite_map.place(animal2) is True
+    assert infinite_map.place(animal3) is True
+    assert infinite_map.place(animal4) is True
+    assert infinite_map.objectAt(Vector2d(0, 0)) is animal1
+    infinite_map.move(animal1, MoveDirection.FORWARD)
+    assert infinite_map.objectAt(Vector2d(0, 1)) is animal1
+    assert infinite_map.objectAt(Vector2d(0, 0)) is None
+    infinite_map.move(animal1, MoveDirection.RIGHT)
+    infinite_map.move(animal1, MoveDirection.FORWARD)
+    assert infinite_map.objectAt(Vector2d(1, 1)) is not animal1
+    assert infinite_map.objectAt(Vector2d(1, 1)) is animal3
+    infinite_map.move(animal4, MoveDirection.LEFT)
+    infinite_map.move(animal4, MoveDirection.FORWARD)
+    assert infinite_map.objectAt(Vector2d(-1, -2)) is None
+    assert infinite_map.objectAt(Vector2d(-2, -2)) is animal4
