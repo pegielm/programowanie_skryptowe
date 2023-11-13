@@ -54,8 +54,6 @@ class Vector2d:
     def __init__(self, xi, yi):
         self.__x = xi
         self.__y = yi
-    def __hash__(self):
-        return hash((self.__x, self.__y))
     @property
     def x(self):
         return self.__x
