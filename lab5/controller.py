@@ -31,5 +31,5 @@ class Simulation:
         print(self.__map)
         for i in range(len(self.__directions)):
             self.__map.move(self.animals[i%len(self.animals)],self.__directions[i])
-            sleep(1)
+            sleep(0.5)
             print(self.__map)  
