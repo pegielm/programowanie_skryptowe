@@ -1,5 +1,6 @@
 from model.core import MapDirection, MoveDirection, Vector2d
 from model.interface import IMoveValidator, IWorldMap
+from model.loger import *
 MAP_WIDTH = 4
 MAP_HEIGHT = 4
 
