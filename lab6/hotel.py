@@ -1,4 +1,8 @@
 import datetime
+'''
+book Jan Kowalski 1 01-01-2000 05-01-2000
+
+'''
 class Hotel:
     rooms = []
     def __init__(self):
@@ -19,6 +23,10 @@ class Hotel:
         for room in self.rooms:
             if room.numer == room_number:
                 print(room)
+                for guest in self.guests:
+                    for reservation in self.guests[guest]:
+                        if reservation.room == room:
+                            print(f"{guest} {reservation.check_inDate} {reservation.check_outDate}")
     def show_guests(self):
         for guest in self.guests:
             print(guest)
