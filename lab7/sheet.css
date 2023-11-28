@@ -1,0 +1,82 @@
+aside  {   
+    width: 30rem;
+    position: absolute;
+    top: 105px;
+    right: 8px;
+    padding-left: 1rem;
+}
+footer {
+    font-size: large;
+    margin-top: 8px;
+}      
+header {
+    padding-left: 1rem;
+}
+main {
+    margin-top: 10px;
+    width: 27.5rem;
+    padding-left: 1rem;
+}
+nav {
+    margin-right: 25px;
+    margin-top: 10px;
+    width: 8rem;
+    padding-left: 1rem;
+}
+nav ul {
+    /* Specyfikacja wyglądu */
+}
+nav li {
+    /* Specyfikacja wyglądu */
+}
+
+.animation{
+    animation: rainbow 2.5s linear;
+    animation-iteration-count: infinite;
+}
+
+.azure{
+    background-color: #EFF;
+    border-color: black;
+    border-style: solid;
+    box-shadow: 5px 5px 10px rgba(0.25, 0.25, 0.25, 0.25);
+}
+
+@keyframes rainbow{
+    100%,0%{
+        color: rgb(255,0,0);
+    }
+    8%{
+        color: rgb(255,127,0);
+    }
+    16%{
+        color: rgb(255,255,0);
+    }
+    25%{
+        color: rgb(127,255,0);
+    }
+    33%{
+        color: rgb(0,255,0);
+    }
+    41%{
+        color: rgb(0,255,127);
+    }
+    50%{
+        color: rgb(0,255,255);
+    }
+    58%{
+        color: rgb(0,127,255);
+    }
+    66%{
+        color: rgb(0,0,255);
+    }
+    75%{
+        color: rgb(127,0,255);
+    }
+    83%{
+        color: rgb(255,0,255);
+    }
+    91%{
+        color: rgb(255,0,127);
+    }
+}

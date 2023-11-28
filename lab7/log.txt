@@ -1,0 +1,11 @@
+INFO:root:2023-11-28 18:35:30.425472 user: admin wywolal funkcje show_room
+INFO:root:Started
+INFO:root:2023-11-28 18:36:05.459160 user: admin wywolal funkcje show_room klasy function
+INFO:root:2023-11-28 18:36:12.857349 user: admin wywolal funkcje show_room klasy function
+INFO:root:2023-11-28 18:36:15.744535 user: admin wywolal funkcje show_room klasy function
+INFO:root:Started
+INFO:root:2023-11-28 18:36:55.234092 user: admin wywolal funkcje show_room klasy <class 'function'>
+INFO:root:Started
+INFO:root:Started
+INFO:root:Started
+INFO:root:2023-11-28 18:40:13.754504 user: michal wywolal funkcje show_guest

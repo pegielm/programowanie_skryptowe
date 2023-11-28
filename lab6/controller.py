@@ -25,9 +25,9 @@ class OptionsParser:
             except ValueError:
                 raise ValueError(f"Wrong argument: {arg}")
         return directions'''
-        directions = list(filter(lambda x: x in ['f','r','b','l'], args))
-        return [MoveDirection(directions.index(x)+1) for x in directions]
-        
+        moves = ['f','r','b','l']
+        directions = list(filter(lambda x: x in moves, args))
+        return [MoveDirection(moves.index(x)+1) for x in directions]
 
 class Simulation:
     animals = []

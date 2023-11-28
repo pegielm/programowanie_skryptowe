@@ -1,0 +1,59 @@
+[
+    {
+        "numer": 1,
+        "miejsce": 1,
+        "cena": 100,
+        "guests": [
+            {
+                "imie": "Jan",
+                "nazwisko": "Kowalski",
+                "od": "01-01-2023",
+                "do": "03-01-2023"
+            }
+        ]
+    },
+    {
+        "numer": 2,
+        "miejsce": 2,
+        "cena": 200,
+        "guests":[
+            {
+            "imie": "Jan",
+            "nazwisko": "Janowski",
+            "od": "01-01-2023",
+            "do": "03-01-2023"
+            },
+            {
+            "imie": "Adam",
+            "nazwisko": "Nowak",
+            "od": "01-01-2023",
+            "do": "03-01-2023"
+            }
+        ]
+    },
+    {
+        "numer": 3,
+        "miejsce": 3,
+        "cena": 300,
+        "guests":[
+            {
+            "imie": "Ala",
+            "nazwisko": "Alowska",
+            "od": "01-01-2023",
+            "do": "03-01-2023"
+            },
+            {
+            "imie": "Adam",
+            "nazwisko": "Adamowski",
+            "od": "01-01-2023",
+            "do": "03-01-2023"
+            },
+            {
+            "imie": "Adam",
+            "nazwisko": "Nowak",
+            "od": "01-01-2023",
+            "do": "03-01-2023"
+            }
+        ]
+    }
+]
