@@ -1,3 +1,20 @@
+@media screen and (max-width: 768px) {
+    header,nav,aside,main,footer {
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        
+
+    }
+    aside {
+        width: 100%;
+        position: relative;
+        left: 0;
+    }
+    
+}
+
 aside  {   
     width: 30rem;
     position: absolute;
@@ -23,15 +40,10 @@ nav {
     width: 8rem;
     padding-left: 1rem;
 }
-nav ul {
-    /* Specyfikacja wyglądu */
-}
-nav li {
-    /* Specyfikacja wyglądu */
-}
+
 
 .animation{
-    animation: rainbow 2.5s linear;
+    animation: rainbow 0.5s linear;
     animation-iteration-count: infinite;
 }
 
@@ -46,37 +58,36 @@ nav li {
     100%,0%{
         color: rgb(255,0,0);
     }
-    8%{
+    10%{
         color: rgb(255,127,0);
     }
-    16%{
+    20%{
         color: rgb(255,255,0);
     }
-    25%{
+    30%{
         color: rgb(127,255,0);
     }
-    33%{
+    40%{
         color: rgb(0,255,0);
     }
-    41%{
+    50%{
         color: rgb(0,255,127);
     }
-    50%{
+    60%{
         color: rgb(0,255,255);
     }
-    58%{
+    70%{
         color: rgb(0,127,255);
     }
-    66%{
+    80%{
         color: rgb(0,0,255);
     }
-    75%{
+    90%{
         color: rgb(127,0,255);
     }
-    83%{
+    95%{
         color: rgb(255,0,255);
     }
-    91%{
-        color: rgb(255,0,127);
-    }
+   
 }
+

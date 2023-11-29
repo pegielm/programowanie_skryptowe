@@ -9,3 +9,14 @@ INFO:root:Started
 INFO:root:Started
 INFO:root:Started
 INFO:root:2023-11-28 18:40:13.754504 user: michal wywolal funkcje show_guest
+INFO:root:Started
+INFO:root:Started
+INFO:root:Started
+INFO:root:2023-11-29 09:46:42.575563 user: michal wywolal funkcje show_guests
+INFO:root:2023-11-29 09:47:20.994609 user: michal wywolal funkcje show_guest
+INFO:root:Started
+INFO:root:Started
+INFO:root:Started
+INFO:root:2023-11-29 10:14:26.162085 user: michal wywolal funkcje show_guests
+INFO:root:Started
+INFO:root:Started

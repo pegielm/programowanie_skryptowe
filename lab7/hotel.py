@@ -78,10 +78,7 @@ class Guest:
     def __str__(self):
         return f"{self.imie} {self.nazwisko}"
     def __eq__(self, other):
-        if self.imie == other.imie and self.nazwisko == other.nazwisko:
-            return True
-        else:
-            return False
+        self.imie == other.imie and self.nazwisko == other.nazwisko
     def __hash__(self):
         return hash((self.imie, self.nazwisko))
 class Reservation:
