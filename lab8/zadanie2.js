@@ -69,5 +69,15 @@ function sum_strings(a) {
     // Zwróć wynik w postaci tablicy
     return [lowercaseCount, uppercaseCount];
   }
-
-
+  /*
+  console.log(sum_strings(["123", "146a2B", "", "b3345a", "\t"]));
+  var pierwsza = "123";
+  var druga = "146a2B";
+  var trzecia = "b3345a";
+  console.log(digits(pierwsza));
+  console.log(digits(druga));
+  console.log(digits(trzecia));
+  console.log(letters(pierwsza));
+  console.log(letters(druga));
+  console.log(letters(trzecia));
+ */
