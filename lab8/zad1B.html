@@ -6,7 +6,9 @@
   </head>
   <body onLoad="
             console.log('Tekst 1');
-            window.alert('Tekst 2');
+            //window.alert('Tekst 2');
+            //document.write('Tekst 3'); - ta trzea zakomentowac
+            //readtype();
           ">
     <div>Treść dokumentu HTML</div>
     <div>Treść dokumentu HTML</div>
@@ -18,7 +20,7 @@
       =
       <output name="wynik" for="pole_tekstowe pole_liczbowe">Tu pojawi się wynik obliczeń</output>    
       <br>    
-      <input type="button" value="Wypisz">
+      <input type="button" value="Wypisz"  onClick="funkcja_zwrotna()">
     </form>
   </body>
 </html>
