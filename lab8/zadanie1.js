@@ -1,4 +1,4 @@
-
+    
 function readtype() {
     for (let i = 0; i < 4; i++) {
         let inputValue = window.prompt("Wprowadź wartość:");
