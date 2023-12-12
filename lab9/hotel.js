@@ -18,23 +18,39 @@ function wykonaj() {
 
     switch (czesci[0]) {
         case "wynajmij":
-            wynajmijPokojDlaGoscia(parseInt(czesci[1]), parseInt(czesci[2]), parseInt(czesci[3]));
-            break;
+            if (!czesci[1] || isNaN(parseInt(czesci[1])) || !czesci[2] || isNaN(parseInt(czesci[2])) || !czesci[3] || isNaN(parseInt(czesci[3]))) {
+                console.error("Błąd: Wszystkie argumenty muszą być prawidłowymi liczbami.");
+            } else {
+                wynajmijPokojDlaGoscia(parseInt(czesci[1]), parseInt(czesci[2]), parseInt(czesci[3]));
+            }
+        break;
         case "listaGosci":
             wyswietlListeGosci();
             break;
         case "wykazWynajec":
-            wykazWynajec(parseInt(czesci[1]));
+            if (!czesci[1] || isNaN(parseInt(czesci[1]))) {
+                console.error("Błąd: ID gościa musi być prawidłową liczbą.");
+            } else {
+                wykazWynajec(parseInt(czesci[1]));
+            }
             break;
         case "stanHotelu":
             wyswietlStanHotelu();
             break;
         case "dodajPokoj":
-            dodajPokoj(parseInt(czesci[1]), parseInt(czesci[2]), parseInt(czesci[3]));
+            if (!czesci[1] || isNaN(parseInt(czesci[1])) || !czesci[2] || isNaN(parseInt(czesci[2])) || !czesci[3] || isNaN(parseInt(czesci[3]))) {
+                console.error("Błąd: Wszystkie argumenty muszą być prawidłowymi liczbami.");
+            } else {
+                dodajPokoj(parseInt(czesci[1]), parseInt(czesci[2]), parseInt(czesci[3]));
+            }
             break;
         case "dodajGosc":
-            dodajGosc(czesci[1], czesci[2]);
-            break;
+            if (!czesci[1] || !czesci[2]) {
+                console.error("Błąd: Imię i nazwisko gościa są wymagane.");
+            } else {
+                dodajGosc(czesci[1], czesci[2]);
+            }
+            break;;
         case "dostepnePokoje":
             wyswietlDostepnePokoje();
             break;
@@ -42,12 +58,20 @@ function wykonaj() {
             wyswietlRezerwacje();
             break;
         case "wyczysc":
-            db.close();
-            indexedDB.deleteDatabase("BazaHotelowa");
-            console.log("Baza danych została wyczyszczona");
+            if (!db) {
+                console.warn("Ostrzeżenie: Baza danych nie istnieje.");
+            } else {
+                db.close();
+                indexedDB.deleteDatabase("BazaHotelowa");
+                console.warn("Baza danych została wyczyszczona");
+            }
             break;
         case "pokoj":
-            wyswietlPokoj(parseInt(czesci[1]));
+            if (!czesci[1] || isNaN(parseInt(czesci[1]))) {
+                console.error("Błąd: Numer pokoju musi być prawidłową liczbą.");
+            } else {
+               wyswietlPokoj(parseInt(czesci[1]));
+            }
             break;
         case "pomoc":
             console.group("Pomoc");
@@ -63,7 +87,7 @@ function wykonaj() {
             console.groupEnd("Pomoc");
             break;
         default:
-            console.error("Nieznane polecenie");
+            console.warn("Nieznane polecenie");
     }
 }
 
