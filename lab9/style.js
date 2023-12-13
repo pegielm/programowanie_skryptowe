@@ -64,7 +64,9 @@ function setStyles() {
 
 function deleteStyles() {
   const elementsToReset = document.querySelectorAll('header, nav, #aside, #footer, #main');
-  elementsToReset.forEach(element => element.removeAttribute('style'));
+  for (let i = 0; i < elementsToReset.length; i++) {
+    elementsToReset[i].style = '';
+  }
 }
 
 function add() {
