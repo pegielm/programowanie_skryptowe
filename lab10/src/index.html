@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forum</title>
+  <style>
+    body {
+      line-height: 1.6;
+      text-align: left;
+      font-family: 'Arial', sans-serif;
+      margin: 20px;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .form-control {
+      display: block;
+      width: 100%;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+    <main>
+        <h1>Wpisy</h1>
+      <!--entries-->
+      <hr>
+      <p class="title">Nowy wpis:</p>
+      <form method="post">
+        <div class="form-group">
+          <label for="name">Twoje imię i nazwisko</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="content">Treść wpisu</label>
+          <textarea class="form-control" id="content" name="content" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Dodaj wpis</button>
+      </form>
+    </main>
+</body>
+</html>
