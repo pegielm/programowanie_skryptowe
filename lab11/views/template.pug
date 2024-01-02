@@ -15,7 +15,7 @@ html(lang='en')
         input(type='reset')
 
       if user.authorised
-        h1 Studenci z Wydziału #{wydzial}
+        h1 lista studentów z #{wydzial}
         if students && students.length > 0
           table
             thead
@@ -25,8 +25,8 @@ html(lang='en')
                 th Wydział
             each student in students
               tr
-                td= student.surname
-                td= student.name
+                td= student.nazwisko
+                td= student.imie
                 td= student.wydzial
         else
           p Brak danych o studentach dla wydziału #{wydzial}

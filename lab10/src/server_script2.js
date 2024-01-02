@@ -3,7 +3,7 @@ import { URL } from "node:url";
 import fs from "node:fs";
 import path from "node:path";
 
-const filePath = path.join("guestbook.txt");
+const filePath = path.join("src/guestbook.txt");
 
 function formatEntry(name, content) {
   return `${name}:${content}\n`;
@@ -29,7 +29,7 @@ function requestListener(request, response) {
       .join('');
     
       response.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-      fs.readFile('index.html', 'utf8', (err, data) => {
+      fs.readFile('src/index.html', 'utf8', (err, data) => {
         if (err) {
           console.error('Błąd odczytu pliku:', err);
           response.end('Błąd serwera');

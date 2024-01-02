@@ -19,16 +19,16 @@ app.get('/', (req, res) => {
     res.send(':)'); 
 });
 
-app.get('/students/:wydzial', async (req, res) => {
+app.get('/:wydzial', async (req, res) => {
     const wydzial = req.params.wydzial;
 
-    const client = new MongoClient('mongodb://localhost:27017');
+    const client = new MongoClient('mongodb+srv://pegielm:qTe46DUQQVwXuNK@agh.bfrc6us.mongodb.net/?retryWrites=true&w=majority');
     await client.connect();
     const db = client.db(dbName);
     const collection = db.collection('students');
     const students = await collection.find({ wydzial: wydzial }).toArray();
-    res.render('template', { students, user });
-    client.close();
+    res.render('template', { students, user , wydzial});
+    client.close(); 
 });
 
 app.listen(PORT, () => {

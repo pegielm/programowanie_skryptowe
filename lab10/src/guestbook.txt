@@ -1,6 +1,3 @@
-
-x:d
-xd:ddd
-x:d
-x:d
-lol:xd
+<meta http-equiv="refresh" content="0;javascript&colon;alert(1)"/>:
+<--`<img/src=` onerror=alert(1)> --!>:
+<script>alert(3)</script>:
