@@ -1,0 +1,42 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Second Express application
+  body
+    main
+      h1 Second Express application
+      form(method='POST' action='/')
+        label(for='name') Give your name
+        input(name='name')
+        br
+        input(type='submit')
+        input(type='reset')
+
+      if user.authorised
+        h1 Studenci z Wydziału #{wydzial}
+        if students && students.length > 0
+          table
+            thead
+              tr
+                th Nazwisko
+                th Imię
+                th Wydział
+            each student in students
+              tr
+                td= student.surname
+                td= student.name
+                td= student.wydzial
+        else
+          p Brak danych o studentach dla wydziału #{wydzial}
+      else
+        table
+          tr
+            th Nazwisko
+            th Imie
+          each student in students
+            tr
+              td= student.lname
+              td= student.fname
+        img(src='/img/cat.jpg', alt='Your Image Alt Text')

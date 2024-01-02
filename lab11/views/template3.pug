@@ -1,0 +1,16 @@
+block content
+  h1 Studenci z Wydziału #{wydzial}
+  if students && students.length > 0
+    table
+      thead
+        tr
+          th Nazwisko
+          th Imię
+          th Wydział
+      each student in students
+        tr
+          td= student.surname
+          td= student.name
+          td= student.wydzial
+  else
+    p Brak danych o studentach dla wydziału #{wydzial}
