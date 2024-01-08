@@ -1,4 +1,4 @@
 use('AGH')
 
-db.students.find({'name':'Jan'})
+db.students.find({'name':'Katarzyna'})
 db.students.find({'wydzial': 'WMS'})
