@@ -96,13 +96,13 @@ html(lang='en')
                         if(show_alert)
                             switch(response_type){
                                 case 'json':
-                                    window.alert(JSON.stringify(xhr.response));
+                                    document.getElementById('output').textContent = JSON.stringify(xhr.response);
                                     break;
                                 case 'document':
-                                    window.alert(xhr.responseXML.documentElement.firstChild.data);
+                                    document.getElementById('output').textContent = decodeHtml(xhr.response.documentElement.firstChild.data);
                                     break;
                                 default:
-                                    window.alert(xhr.response);
+                                    document.getElementById('output').textContent = xhr.response;
                             }
                         else { 
                             results.set(`ajax ${http_method} ${response_type}`, xhr.response);
@@ -209,13 +209,13 @@ html(lang='en')
                         result.then((data) => {
                             switch(response_type){
                                 case 'json':
-                                    window.alert(JSON.stringify(data));
+                                    document.getElementById('output').textContent = JSON.stringify(data);
                                     break;
                                 case 'xml':
-                                    window.alert(decodeHtml(data));
+                                    document.getElementById('output').textContent = decodeHtml(data);
                                     break;
                                 default:
-                                    window.alert(data);
+                                    document.getElementById('output').textContent = data;
                             }
                         })
 
@@ -276,6 +276,7 @@ html(lang='en')
                         td
                             each type in ["text", "json", "xml"]
                                 button(onclick=`console.clear() ; requestFetchAPI("${method}","${type}", getName('${method}'), true)`) #{type}
+        div#output
         h1 Unit tests
         button(onclick='window.location.reload();') Restart
         div(id="mocha")

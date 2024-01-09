@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 app.get('/:wydzial', async (req, res) => {
     const wydzial = req.params.wydzial;
 
-    const client = new MongoClient('mongodb+srv://pegielm:qTe46DUQQVwXuNK@agh.bfrc6us.mongodb.net/?retryWrites=true&w=majority');
+    const client = new MongoClient('');
     await client.connect();
     const db = client.db(dbName);
     const collection = db.collection('students');
