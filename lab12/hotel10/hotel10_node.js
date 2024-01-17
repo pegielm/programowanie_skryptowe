@@ -7,13 +7,28 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { getSystemErrorMap } from 'util';
 import { exit } from 'process';
+import crsf from 'csurf';
+import cookieParser from 'cookie-parser';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const app = express();
+const app = express(); //nie da s ie
+app.use(cookieParser());
+app.use(crsf({ cookie: true }));
+app.use(express.static('public'));
+app.use(function (req, res, next) {
+    res.cookie('XSRF-TOKEN', req.csrfToken());
+    next();
+});
+
+app.disable('x-powered-by');
+app.use(function (err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+  });
 const port = 8000;
-const mongo_path = '';
+const mongo_path = 'mongodb+srv://pegielm:qTe46DUQQVwXuNK@agh.bfrc6us.mongodb.net/?retryWrites=true&w=majority';
 if (mongo_path == '' ){
     console.error('MongoDB path is empty');
     exit(1);
@@ -109,7 +124,15 @@ app.post('/book', async (req, res) => {
         const db = client.db('HOTEL');
         const roomsDB = db.collection('rooms');
         const reservationsDB = db.collection('reservations');
-
+        
+        if (typeof body.number !== 'number' || body.number < 1 || body.number > 1000 || 
+            typeof body.name !== 'string' || !body.name.match(/^[A-Za-z]+$/) ||
+            typeof body.surname !== 'string' || !body.surname.match(/^[A-Za-z]+$/)) {
+            console.error('Invalid input types');
+            res.status(400).send('Invalid input');
+            return;
+        }
+        ///jest rozwiazne wyzej
         await roomsDB.updateOne(
             { number: body.number },
             { $push: { guests: `${body.name} ${body.surname}`} }

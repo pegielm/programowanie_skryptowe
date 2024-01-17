@@ -1,0 +1,8 @@
+{
+  "tasks": {
+    "dev": "deno run --watch main.ts",
+    "gb" : "deno run --allow-net --allow-read --watch --unstable --allow-env test_gues.ts",
+    "oak" : "deno run --allow-net --allow-read --watch --unstable --allow-env oak.ts"
+
+  }
+}
