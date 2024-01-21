@@ -28,7 +28,7 @@ app.use(function (err, req, res, next) {
     res.status(500).send('Something broke!');
   });
 const port = 8000;
-const mongo_path = 'mongodb+srv://pegielm:qTe46DUQQVwXuNK@agh.bfrc6us.mongodb.net/?retryWrites=true&w=majority';
+const mongo_path = '';
 if (mongo_path == '' ){
     console.error('MongoDB path is empty');
     exit(1);
